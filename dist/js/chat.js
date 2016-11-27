@@ -53,7 +53,7 @@ $(function(){
 		//@TODO ao adicionar msg rolar o scroll pra baixo
 		if(user == 'bot'){
 
-			$("#divMensagens").append("<div class=\"direct-chat-msg\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-left\">Prefeitura de Curitiba</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_prefeitura.png\" alt=\"Prefeitura de Curitiba\"><div class=\"direct-chat-text\">"+msg+"</div></div>");
+			$("#divMensagens").append("<div class=\"direct-chat-msg\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-left\">GOPrefs</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_prefeitura.png\" alt=\"GOPrefs\"><div class=\"direct-chat-text\">"+msg+"</div></div>");
 		} else if(user == 'user'){
 
 			$("#divMensagens").append("<div class=\"direct-chat-msg right\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-right\">Usu&aacute;rio</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_usuario.png\" alt=\"Usuário\"><div class=\"direct-chat-text\">"+msg+"</div></div>");

@@ -196,6 +196,7 @@ function send(msg){
   }).done(function(data) {
     //TODO vai retornar varias msgs, em um loop coloca
     //TODO se possivel... colcoar um delay pra cada msg... pra nao ficar tao robotica...
+
     var fraseInicial = data.output.text[0];
 
     console.log("fraseInicial: "+fraseInicial);
@@ -204,7 +205,11 @@ function send(msg){
 
       appendButtonMsg(data);
     } else {
-
+		
+		if(typeof data === "string") {
+			data = {"output" : { "text" : data}}
+		}
+		
       if(conversation_id != null) setTimeout(function() { appendMsg("bot", data.output.text); }, 1000);
       else appendMsg("bot", data.output.text);
     }
@@ -229,7 +234,7 @@ function send(msg){
     //@TODO ao adicionar msg rolar o scroll pra baixo
     if(user == 'bot'){
 
-      $("#divMensagens").append("<div class=\"direct-chat-msg\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-left\">Prefeitura de Curitiba</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_prefeitura.png\" alt=\"Prefeitura de Curitiba\"><div class=\"direct-chat-text\">"+msg+"</div></div>");
+      $("#divMensagens").append("<div class=\"direct-chat-msg\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-left\">GOPrefs</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_prefeitura.png\" alt=\"GOPrefs\"><div class=\"direct-chat-text\">"+msg+"</div></div>");
     } else if(user == 'user'){
 
       $("#divMensagens").append("<div class=\"direct-chat-msg right\"><div class=\"direct-chat-info clearfix\"><span class=\"direct-chat-name pull-right\">Usu&aacute;rio</span></div><img class=\"direct-chat-img\" src=\"dist/img/logo_usuario.png\" alt=\"Usuário\"><div class=\"direct-chat-text\">"+msg+"</div></div>");
